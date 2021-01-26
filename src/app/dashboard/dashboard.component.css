@@ -1,0 +1,43 @@
+.fornavbar{
+    background-color:#6b9acb
+  }
+  .forLi{
+    color: white;
+  }
+
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background: white;
+  }
+  .logoutBtn{
+    float: right;
+    display: flex;
+    justify-content: center;
+    background: cornflowerblue;
+    margin-top: 1%;
+    border-radius: 33px;
+  }
+  .infoLable{
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    margin-top: 2%;
+  }
+  .tableDiv{
+    display: flex;
+    margin-top: 8%;
+    justify-content: center;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }

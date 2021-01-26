@@ -1,0 +1,71 @@
+<!-- <nav class="navbar fixed-top navbar-expand-lg fornavbar fixed-top">
+      <a class="navbar-brand">File Manager</a>
+      <button  class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive" >
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link forLi" routerLink="/dashboard">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a href="javascript:void(0)" class="nav-link forLi" (click)="logout()">Logout</a>
+              </li>
+            </ul>    
+      </div>
+  </nav> -->
+
+
+
+  <div class="container">
+    <p class="infoLable"> User Information
+      
+    </p>  
+    <div class="row">
+
+      <table>
+        <tr>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Skills</th>
+          <th>Email</th>
+          <th>Mobile no.</th>
+        </tr>
+        <tr>
+          <td>{{userData.firstName}}</td>
+          <td>{{userData.lastName}}</td>
+          <td>{{userData.AGE}}</td>
+          <td>{{userData.GENDER}}</td>
+          <td>
+            <!-- {{userData.GENDER}} -->
+            <ul >
+              <li *ngFor="let skill of skills">
+                  <div class="timeline-badge">
+                      <span>{{skill.item_text}}</span>
+                  </div>
+                  <!-- <div class="timeline-panel">
+                      <div class="timeline-body">
+                          <p>{{alert.id}}</p>
+                      </div>
+                      <div class="timeline-footer">
+                          <p class="">{{alert.date}}</p>
+                      </div>
+                  </div> -->
+              </li>
+          </ul>
+
+          </td>
+          <td>{{userData.EMAIL}}</td>
+          <td>{{userData.MOB}}</td>
+        </tr>
+       
+      </table>
+    </div>
+
+    <div class="row" style="    justify-content: flex-end;">
+      <a href="javascript:void(0)" class="nav-link forLi logoutBtn" (click)="logout()">Logout</a>
+    </div>
+
+  </div>

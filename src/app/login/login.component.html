@@ -1,0 +1,85 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Sign In</h5>
+
+
+          <form
+          #FileForm="ngForm"
+          [formGroup]="loginForm"
+          class="form-validate form-horizontal"
+          (submit)="onSubmitButtonClicked(loginForm.value)"
+          novalidate=""
+        >
+          <div class="form-group">
+            <label for="inputEmail">Email address *</label>
+            <input
+              class="form-control rounded"
+              type="email"
+              formControlName="email"
+              id="inputEmail"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              [formControl]="loginForm.controls['email']"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                loginForm.controls['email'].hasError('required') &&
+                (loginForm.controls['email'].dirty ||
+                  loginForm.controls['email'].touched)
+              "
+            >
+              Email is requierd</span
+            >
+            <span class="text-danger" *ngIf="
+                loginForm.controls['email'].hasError('email') &&
+                (loginForm.controls['email'].dirty ||
+                  loginForm.controls['email'].touched)" >
+              enter valid email
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Password *</label>
+            <input
+              class="form-control rounded"
+              type="password"
+              formControlName="password"
+              id="inputPassword"
+              aria-describedby="passwordHelp"
+              placeholder="Enter password"
+              [formControl]="loginForm.controls['password']"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched "
+            >
+              password is requierd</span
+            >
+          </div>
+          <div class="form-group">
+            <button
+              [disabled]="loginForm.invalid"
+              class="btn btn-primary"
+              type="submit"
+            >
+              Login
+            </button>
+            <a routerLink="/register" class="btn btn-link">Register</a>
+          </div>
+        </form>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

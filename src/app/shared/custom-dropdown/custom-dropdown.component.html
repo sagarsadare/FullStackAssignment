@@ -1,0 +1,45 @@
+<p>custom-dropdown works!</p>
+<ng-template [ngTemplateOutlet]="countryDropdown"></ng-template>
+
+<ng-template #countryDropdown>
+  <div class="row" style="width: 100%;margin-left: 0px;">
+    <div ngbDropdown class="d-inline-block" #myDrop="ngbDropdown" style="width: 100%;margin-left: 0px;">
+      <button type="button" class=" myclass  btn my-2 my-sm-0 btnClass  " ngbDropdownToggle>
+        <span class="form-control flag-icon flag-icon-{{modalSelectedCountryCode}} flag-icon-squared"
+          style="height: 21px;border: transparent;margin-bottom: 0;float: left;">
+        </span>
+        <span class="FlagLable">
+          ({{modalSelectedCountryCode | uppercase}}) {{modalSelectedteliCode}}
+        </span>
+        <span>
+          <img src="../../../../assets/images/caret.png" alt="" style="cursor: pointer;" >
+        </span>
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownForm1">
+        <form class="px-2 py-3">
+          <div class="form-group">
+            <input type="email" class="form-control" name="search" placeholder="Search" [(ngModel)]="search">
+
+          </div>
+          <div style="height: 380px; overflow-y: scroll;width: 342px;">
+            <table class="table table-striped">
+              <tbody class="forcaret">
+                <tr *ngFor="let country of countries| searchDrop:search">
+                  <td>
+                    <span class="flag-icon flag-icon-{{country.CountriCode}} flag-icon-squared">
+                    </span>
+                  </td>
+                  <td (click)="modallinkClicked(country)" (click)="myDrop.close()">{{country.name}} ({{country.CountriCode | uppercase}}) </td>
+                  <td>
+                    &#43;{{country.code}} 
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-template>
